@@ -8,7 +8,7 @@ export default Route.extend({
     saveLibrary(library) {
       library.save().then(() => this.transitionTo('libraries'));
     },
-    willTransition() {
+    willTransition(transition) {
       let model = this.controller.get('model');
 
       if (model.get('hasDirtyAttributes')) {
